@@ -29,9 +29,3 @@ A ready-to-use Next.js wait list page that helps you capturing potential custome
 Once you have successfully deployed the project, ensure to set the environment variables as outlined in the `.env.example` file on your hosting platform.
 
 If you encounter any issues during this process, please don't hesitate to contact me at: soufiane-elc@outlook.com.
-
-## Support
-
-If you appreciate my work, you can show your support by [buying me a coffee](https://www.buymeacoffee.com/soufianeelc). Your contribution helps keep the momentum going and fuels the creation of more content.
-
-Thank you for your generosity! ☕
