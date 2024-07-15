@@ -8,7 +8,7 @@ export default function Home() {
       <Toaster />
 
       <section className="w-screen h-dvh grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="md:h-full h-80 bg-[#09255c] relative overflow-hidden">
+        <div className="md:h-full h-80 bg-[#181f1f] relative overflow-hidden">
           <Image
             src="/manual.png"
             alt="Manual Image Dallie"
