@@ -28,7 +28,7 @@ const EmailForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="text-center">
+        <form onSubmit={handleSubmit} className="text-left">
             <input
                 type="email"
                 placeholder="Enter your email"
@@ -38,7 +38,7 @@ const EmailForm = () => {
                 className="form-control"
             />
             <button type="submit" className="btn btn-primary">
-                Join the Waiting List
+                Join the Waiting List!
             </button>
             {message && <p>{message}</p>}
         </form>
