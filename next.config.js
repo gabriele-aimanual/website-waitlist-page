@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   trailingSlash: true,
-  output: 'export',
+  basePath: '/website-waitlist-page',
+  assetPrefix: '/website-waitlist-page/',
 }
 
 module.exports = nextConfig
