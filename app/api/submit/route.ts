@@ -3,9 +3,11 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
     try {
         const formData = await request.formData();
-        const email = formData.get('email');
+        console.log('Form Data:', formData);  // Log form data for debugging
 
-        // Check if email exists and convert it to string
+        const email = formData.get('email');
+        console.log('Email:', email);  // Log email for debugging
+
         if (!email || typeof email !== 'string') {
             return NextResponse.json({ error: 'Email is required and must be a string' }, { status: 400 });
         }
@@ -22,12 +24,13 @@ export async function POST(request: Request) {
 
         if (!response.ok) {
             const errorText = await response.text();
+            console.error('Error from Google App Script:', errorText);  // Log error from Google App Script
             throw new Error(`Network response was not ok: ${errorText}`);
         }
 
         return NextResponse.json({ message: 'Email successfully added to the waiting list!' });
     } catch (error: any) {
-        console.error('Error submitting email:', error.message);
+        console.error('Error submitting email:', error.message);  // Log general error
         return NextResponse.json({ error: `Failed to submit email: ${error.message}` }, { status: 500 });
     }
 }
