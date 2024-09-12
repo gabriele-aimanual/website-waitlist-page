@@ -2,10 +2,11 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
     try {
-        const formData = await request.formData();
-        console.log('Form Data:', formData);  // Log form data for debugging
+         // Log request headers to inspect the content-type and other request details
+        console.log('Request Headers:', request.headers);
 
-        const email = formData.get('email');
+        // Attempt to parse the JSON body
+        const { email } = await request.json();
         console.log('Email:', email);  // Log email for debugging
 
         if (!email || typeof email !== 'string') {
@@ -29,7 +30,7 @@ export async function POST(request: Request) {
         }
 
         return NextResponse.json({ message: 'Email successfully added to the waiting list!' });
-    } catch (error: any) {
+    }    catch (error: any) {
         console.error('Error submitting email:', error.message);  // Log general error
         return NextResponse.json({ error: `Failed to submit email: ${error.message}` }, { status: 500 });
     }
